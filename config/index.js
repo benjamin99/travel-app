@@ -5,7 +5,7 @@ const _ = require('lodash');
 const env = process.env.NODE_ENV || 'development';
 const config = {
   port: +process.env.SERVER_PORT || 3000,
-  host: process.env.SERVER_HOST || 'localhost',
+  host: process.env.SERVER_HOST || '0.0.0.0',
   timezone: process.env.SERVER_TIMEZONE || 'UTC',
   logLevel: process.env.LOG_LEVEL || (env === 'development' ? 'trace' : 'warn'),
   mongodb: process.env.MONGODB
