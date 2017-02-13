@@ -6,7 +6,7 @@ const mongoErrorHandler = require('./mongoErrorHandler');
 
 /** error codes */
 
-const ERROR_CODE = require('./constants').ERROR_CODE;
+module.exports.ERROR_CODE = require('./constants').ERROR_CODE;
 
 /** error handlers */
 

@@ -15,7 +15,9 @@ function formatUser(user) {
   return {
     id: user._id,
     username: user.username,
-    alias: user.alias || user.username
+    alias: user.alias || user.username,
+    created: user.created,
+    updated: user.updated
   }
 }
 
@@ -34,8 +36,9 @@ const updateSchema = joi.object().keys({
 
 /** actions */
 
-async function list() {
-  // TODO ...
+async function list(ctx) {
+  const users = await User.find();
+  render(ctx, 200, users.map(formatUser));
 }
 
 async function show(ctx) {
@@ -54,8 +57,10 @@ async function update() {
   // TODO ...
 }
 
-async function destroy() {
-  // TODO ...
+async function destroy(ctx) {
+  const user = ctx.user;
+  await user.remove();
+  render(ctx, 204, {});
 }
 
 exports.list = list;
