@@ -6,6 +6,7 @@ const ERROR_CODE = {
 
   // 1100: validation error
   validation: 1100,
+  uniqueConstraints: 1101,
 
   // 1200: Resource error
   userNotFound: 1200,
