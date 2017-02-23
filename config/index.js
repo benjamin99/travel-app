@@ -8,7 +8,9 @@ const config = {
   host: process.env.SERVER_HOST || '0.0.0.0',
   timezone: process.env.SERVER_TIMEZONE || 'UTC',
   logLevel: process.env.LOG_LEVEL || (env === 'development' ? 'trace' : 'warn'),
-  mongodb: process.env.MONGODB
+  mongodb: {
+    url: process.env.MONGODB || 'mongodb://localhost/travel-app-dev'
+  }
 };
 
 console.log(`load config: ${env}`);

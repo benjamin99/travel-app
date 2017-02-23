@@ -10,7 +10,8 @@ const ERROR_CODE = {
 
   // 1200: Resource error
   userNotFound: 1200,
-  transactionNotFound: 1201
+  transactionNotFound: 1201,
+  eventNotFound: 1202
 };
 
 module.exports.ERROR_CODE = ERROR_CODE;
