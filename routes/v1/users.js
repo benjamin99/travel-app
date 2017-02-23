@@ -1,6 +1,5 @@
 'use strict';
 
-const _ = require('lodash');
 const joi = require('joi');
 const bluebird = require('bluebird');
 const render = require('../common/render');
@@ -16,6 +15,7 @@ function formatUser(user) {
     id: user._id,
     username: user.username,
     alias: user.alias || user.username,
+    bankAccunt: user.bankAccunt,
     created: user.created,
     updated: user.updated
   }
@@ -26,11 +26,12 @@ function formatUser(user) {
 const createSchema = joi.object().keys({
   username: joi.string(),
   password: joi.string(),
+  bankAccunt: joi.string(),
   alias: joi.string()
 }).requiredKeys('username', 'password');
 
 const updateSchema = joi.object().keys({
-  password: joi.string(),
+  bankAccunt: joi.string(),
   alias: joi.string()
 });
 
